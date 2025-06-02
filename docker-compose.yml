@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: analytics_api:latest  # Use the latest tag for the API image
+    container_name: analytics_api  # Build the API image from the Dockerfile
+    ports:
+      - "8000:8000"  # Map host port 8000 to container port 8000
+    env_file:
+      - .env  # Load environment variables from .env file
+    depends_on:
+      - redis  # Ensure Redis starts before the API
+  redis:
+    image: redis:6.2  # Use Redis 6.2 for caching
+    ports:
+      - "6379:6379"  # Map host port 6379 to container port 6379

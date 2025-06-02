@@ -1,0 +1,4 @@
+fastapi==0.115.12  # FastAPI framework for building the API
+uvicorn==0.30.1   # ASGI server to run FastAPI
+psycopg2-binary==2.9.9  # PostgreSQL adapter for Redshift connectivity
+redis==5.0.1  # Redis client for caching
