@@ -1,6 +1,11 @@
 # Use a slim Python base image for efficiency
 FROM python:3.9-slim
 
+ENV LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
 # Set working directory inside the container
 WORKDIR /app
 
